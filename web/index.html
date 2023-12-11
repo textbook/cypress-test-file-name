@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            document.getElementById("input").addEventListener("change", (event) => {
+                document.getElementById("filename").textContent = event.target.files?.[0]?.name ?? "...";
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>Demo</h1>
+    <input id="input" type="file">
+    <p id="filename">...</p>
+</body>
+</html>

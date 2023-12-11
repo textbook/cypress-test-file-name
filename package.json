@@ -9,12 +9,19 @@
     "cypress:version": "cypress version",
     "cypress:info": "cypress info",
     "cypress:cache:list": "cypress cache list",
-    "list-videos": "ls -l cypress/videos"
+    "e2e": "concurrently --kill-others --success=first \"npm:e2e:*\"",
+    "e2e:app": "npm run start",
+    "e2e:run": "npm run cypress:run",
+    "list-videos": "ls -l cypress/videos",
+    "start": "serve web/"
   },
   "keywords": [],
   "author": "Cypress-io",
   "license": "ISC",
   "devDependencies": {
+    "concurrently": "^8.2.2",
+    "cypress": "^13.6.1",
+    "serve": "^14.2.1"
   },
   "repository": {
     "type": "git",
