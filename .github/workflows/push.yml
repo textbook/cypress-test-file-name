@@ -1,0 +1,17 @@
+name: Minimal reproducible example
+
+on: push
+
+jobs:
+  test:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v3
+        with:
+          cache: npm
+          node-version: 20
+      - run: npm ci
+      - run: npm run e2e
+        env:
+          DEBUG: 'cypress:*'
